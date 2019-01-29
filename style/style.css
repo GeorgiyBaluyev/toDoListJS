@@ -1,0 +1,105 @@
+header{
+    width: 100%;
+    height: 250px;
+    background-color: palegoldenrod;
+    border-bottom: 1px solid goldenrod;
+    text-align: center;
+}
+.input{
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    height: 50px;
+    width: 250px;
+    color: goldenrod;
+    outline: none;
+    border-radius: 25px;
+    border: 1px solid goldenrod;
+    font-size: 24px;
+}
+#add{
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    height: 50px;
+    width: 50px;
+    color: goldenrod;
+    outline: none;
+    border-radius: 25px;
+    border: 1px solid goldenrod;
+    font-size: 24px;
+    background-color: palegoldenrod;
+}
+body{
+    background-color: palegoldenrod;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+#title{
+    height: 150px;
+    color: darkgoldenrod;
+    font-size: 75px;
+}
+#field{
+    margin: auto;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+main{
+    text-align: center;
+}
+#description{
+    color: darkgoldenrod;
+    font-size: 45px;
+}
+#done{
+    color: darkgoldenrod;
+    font-size: 45px;
+    margin-top: 25px;
+}
+#tasks{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.newTask{
+    display: flex;
+    justify-content: space-between;
+    height: 75px;
+    width: 600px;
+    background-color: white;
+    border : 1px solid goldenrod;
+    border-radius: 25px;
+    margin: 10px;
+    text-align: center;
+    padding-left: 25px;
+}
+.btns{
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.taskText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+
+}
+.cancel{
+    width: 25px;
+    height: 25px;
+    border-radius: 100px;
+    background-color: red;
+    outline: none;
+}
+.confirm{
+    width: 25px;
+    height: 25px;
+    border-radius: 100px;
+    background-color: green;
+    outline: none;
+}
+
+#add:disabled{
+    background-color: goldenrod;
+}
