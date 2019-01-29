@@ -61,7 +61,6 @@ main{
 }
 
 .newTask{
-    display: flex;
     justify-content: space-between;
     height: 75px;
     width: 600px;
@@ -102,4 +101,17 @@ main{
 
 #add:disabled{
     background-color: goldenrod;
+}
+
+.class-container{
+    opacity: 0;
+    transform: translateX(-300px);
+}
+.open-class{
+    transition: all .75s;
+}
+.close-class{
+    transition: all .75s;
+    opacity: 0;
+    transform: translateX(300px);
 }

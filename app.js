@@ -13,11 +13,22 @@ let cancelBtn = document.createElement('button');
 let confirmBtn = document.createElement('button');
 let taskList = [];
 let doneTasks = [];
+
+
+function raf(fn){
+    window.requestAnimationFrame(function () {
+        window.requestAnimationFrame(function () {
+            fn();
+        })
+    })
+}
 confirmBtn.className = 'confirm';
 taskText.className = 'taskText';
 btns.className = 'btns';
 cancelBtn.className = 'cancel';
 task.className = 'newTask';
+
+
 
 
 if (!input.value) {
@@ -52,7 +63,6 @@ function addNewTask() {
         description.innerHTML = `You have ${taskList.length} tasks`
     }
     newBtn.addEventListener('click', function () {
-        newTask.style.display = 'none';
         taskList.pop();
         if(taskList.length === 1){
             description.innerHTML = `You have 1 task`;}
@@ -62,6 +72,13 @@ function addNewTask() {
         if(taskList.length > 1){
             description.innerHTML = `You have ${taskList.length} tasks`
         }
+        let handlerClose=function(){
+            newTask.style.display = 'none';
+            newTask.classList.remove('close-class');
+            newTask.removeEventListener('transitionend', handlerClose);
+        };
+        newTask.classList.add('close-class');
+        newTask.addEventListener('transitionend', handlerClose);
     });
     newConfirmBtn.addEventListener('click', function () {
         newTask.style.backgroundColor = 'green';
@@ -84,7 +101,18 @@ function addNewTask() {
         if(doneTasks.length < 1){
             done.style.display = 'none';
         }
-    })}
-
+    });
+    let handlerOpen=function(){
+        newTask.classList.remove('open-class');
+        newTask.removeEventListener('transitionend', handlerOpen);
+    };
+    newTask.style.display = 'flex';
+    newTask.classList.add('class-container');
+    raf(function () {
+        newTask.classList.add('open-class');
+        newTask.classList.remove('class-container');
+    });
+    newTask.addEventListener('transitionend', handlerOpen);
+}
 })();
 
